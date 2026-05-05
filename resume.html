@@ -25,7 +25,7 @@
       background: #ffffff;
       padding: 60px 80px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-      border-left: 6px solid #8B5CF6; /* the purple accent from the image */
+      border-left: 2px solid #e5e5e5;
       border-top: 2px solid #e5e5e5;
       border-right: 2px solid #e5e5e5;
       border-bottom: 2px solid #e5e5e5;
@@ -39,7 +39,7 @@
 
     h1.name {
       font-family: 'Montserrat', sans-serif;
-      font-size: 42px;
+      font-size: 38px;
       font-weight: 800;
       letter-spacing: 2px;
       color: #222222;
@@ -50,7 +50,7 @@
 
     h2.title {
       font-family: 'Montserrat', sans-serif;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 500;
       color: #444444;
       margin-bottom: 16px;
@@ -86,7 +86,7 @@
 
     /* Sections */
     section {
-      margin-bottom: 5px; /* handled mostly by hr spacing */
+      margin-bottom: 5px;
     }
 
     h3.section-title {
@@ -109,13 +109,14 @@
 
     /* Items (Work & Edu & Projects) */
     .item-group {
-      margin-bottom: 16px;
+      margin-bottom: 18px;
+      break-inside: avoid;
     }
 
-    .item-meta {
-      font-size: 12px;
-      color: #888888;
-      font-weight: 500;
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
       margin-bottom: 2px;
     }
 
@@ -123,7 +124,21 @@
       font-size: 14px;
       font-weight: 700;
       color: #222222;
-      margin-bottom: 4px;
+      flex-shrink: 0;
+    }
+
+    .item-meta {
+      font-size: 11px;
+      color: #666666;
+      font-weight: 500;
+      text-align: right;
+    }
+
+    .item-stack {
+      font-size: 11px;
+      color: #777777;
+      font-weight: 500;
+      text-align: right;
     }
 
     .item-content {
@@ -165,6 +180,9 @@
 
     /* Print styles */
     @media print {
+      @page {
+        margin: 0;
+      }
       body {
         padding: 0;
         background: #fff;
@@ -172,7 +190,7 @@
       .page {
         box-shadow: none;
         border: none;
-        border-left: 6px solid #8B5CF6 !important;
+        border-left: 2px solid #e5e5e5 !important;
         print-color-adjust: exact;
         -webkit-print-color-adjust: exact;
         padding: 40px 60px;
@@ -191,7 +209,7 @@
     <div class="contact-info">
       <span>&#9742; <a href="tel:9585076227">+91 9585076227</a></span>
       <span>&#9993; <a href="mailto:afsalabbas805@gmail.com">afsalabbas805@gmail.com</a></span>
-      <span>&#128205; <a href="https://linkedin.com/in/afsal-a" target="_blank">LinkedIn</a> | <a href="https://github.com/Afsal-A123" target="_blank">GitHub</a> | <a href="https://leetcode.com/u/Afsal_A/" target="_blank">LeetCode</a></span>
+      <span><a href="https://www.linkedin.com/in/afsal-a-036851291/" target="_blank">LinkedIn</a> | <a href="https://github.com/Afsal-A123" target="_blank">GitHub</a> | <a href="https://leetcode.com/u/Afsal_A/" target="_blank">LeetCode</a></span>
     </div>
   </header>
 
@@ -201,7 +219,7 @@
   <section>
     <h3 class="section-title">Professional Summary</h3>
     <p class="about-text">
-      Curious and driven CS&E undergraduate who enjoys solving real-world problems through clean code and strong DSA fundamentals. Experienced building secure, scalable full-stack applications. Actively seeking software engineering or full-stack roles to contribute to impactful products and grow continuously as an engineer.
+      Curious and driven Computer Science & Engineering undergraduate who enjoys solving real-world problems through clean code and strong DSA fundamentals. Experienced building secure, scalable full-stack applications. Actively seeking software engineering or full-stack roles to contribute to impactful products and grow continuously as an engineer.
     </p>
   </section>
 
@@ -212,16 +230,20 @@
     <h3 class="section-title">Education</h3>
     
     <div class="item-group">
-      <div class="item-meta">Sri Krishna College of Technology | 2023 – 2027</div>
-      <div class="item-title">B.E. Computer Science & Engineering</div>
+      <div class="item-header">
+        <div class="item-title">B.E. Computer Science & Engineering</div>
+        <div class="item-meta">Sri Krishna College of Technology | 2023 – 2027</div>
+      </div>
       <div class="item-content">
         Relevant Coursework: Data Structures & Algorithms, Operating Systems, Database Management Systems, Computer Networks, Object-Oriented Programming (OOP)
       </div>
     </div>
     
     <div class="item-group" style="margin-bottom: 8px;">
-      <div class="item-meta">Holy Family Convent Matric HSS | Graduated 2023</div>
-      <div class="item-title">Higher Secondary Education</div>
+      <div class="item-header">
+        <div class="item-title">Higher Secondary Education</div>
+        <div class="item-meta">Holy Family Convent Matriculation Higher Secondary School | Graduated 2023</div>
+      </div>
     </div>
   </section>
 
@@ -232,10 +254,12 @@
     <h3 class="section-title">Work Experience</h3>
     
     <div class="item-group" style="margin-bottom: 8px;">
-      <div class="item-meta">Amypo Technologies Pvt. Ltd. | 6 Months (India)</div>
-      <div class="item-title">Software Engineering Intern</div>
+      <div class="item-header">
+        <div class="item-title">Software Engineering Intern</div>
+        <div class="item-meta">Amypo Technologies Private Limited | 6 Months (India)</div>
+      </div>
       <div class="item-content">
-        Gained 6 months of experience as a well-versed software developer directly contributing to the architecture, scalability, and security of enterprise-grade cross-platform applications serving 10,000+ concurrent users.
+        Gained 6 months of experience as a proficient software developer contributing directly to the architecture, scalability, and security of enterprise-grade cross-platform applications serving 10,000+ concurrent users.
       </div>
     </div>
   </section>
@@ -247,45 +271,55 @@
     <h3 class="section-title">Projects</h3>
     
     <div class="item-group">
-      <div class="item-meta">Next.js · Spring Boot · PostgreSQL · Docker</div>
-      <div class="item-title">
-        Task Management System 
-        <a href="https://github.com/Afsal-A123/task-management-system" target="_blank" class="project-link">[GitHub]</a>
+      <div class="item-header">
+        <div class="item-title">
+          Task Management System 
+          <a href="https://github.com/Afsal-A123/task_mgmt" target="_blank" class="project-link">[GitHub]</a>
+        </div>
+        <div class="item-stack">Next.js · Spring Boot · PostgreSQL · Docker</div>
       </div>
       <div class="item-content">
         <ul>
-          <li>Architected full-stack task management platform with role-based access control, managing over 500+ daily active tasks.</li>
-          <li>Developed RESTful APIs and optimized PostgreSQL queries, improving data retrieval speed by 35%.</li>
-          <li>Containerized backend services with Docker for scalable deployment, reducing setup time by 50%.</li>
+          <li>Architected a scalable full-stack task management platform equipped with secure role-based access control for efficient task delegation.</li>
+          <li>Developed robust RESTful APIs and streamlined PostgreSQL database queries to significantly enhance data retrieval performance.</li>
+          <li>Containerized backend services using Docker to streamline deployments and ensure consistent environments.</li>
         </ul>
       </div>
     </div>
 
+    <hr style="break-before: page; border: none; height: 0; margin: 0;">
+    <br/><br/>
     <div class="item-group">
-      <div class="item-meta">React · Spring Boot · AWS · Docker · MySQL</div>
-      <div class="item-title">
-        Hotel Management System
-        <a href="https://github.com/Afsal-A123/hotel-management-system" target="_blank" class="project-link">[GitHub]</a>
+      <div class="item-header">
+        <div class="item-title">
+          Hotel Management System
+          <a href="https://github.com/Afsal-A123/Hotel_Management" target="_blank" class="project-link">[GitHub]</a>
+        </div>
+        <div class="item-stack">Java · Spring Boot · React · MySQL · AWS S3 · JWT</div>
       </div>
       <div class="item-content">
         <ul>
-          <li>Engineered a hotel management system for booking, room allocation, and billing, automating processes for 50+ simulated daily reservations.</li>
-          <li>Deployed backend services on AWS EC2 with Docker-based infrastructure, achieving 99.9% availability.</li>
-          <li>Enhanced system API response time by 40% through comprehensive backend and database optimization.</li>
+          <li>Engineered a robust hotel management platform using Spring Boot and React, featuring a decoupled architecture and RESTful API integration.</li>
+          <li>Implemented stateless authentication using JWT and Spring Security, including RBAC to differentiate between Admin and User privileges.</li>
+          <li>Integrated AWS S3 for scalable cloud-based storage, enabling efficient management and retrieval of high-resolution room images.</li>
+          <li>Enhanced MySQL relational schema using Spring Data JPA/Hibernate for efficient data persistence and complex query handling.</li>
         </ul>
       </div>
     </div>
 
     <div class="item-group" style="margin-bottom: 8px;">
-      <div class="item-meta">Node.js · MongoDB · React</div>
-      <div class="item-title">
-        Job Portal System
-        <a href="https://github.com/Afsal-A123/job-portal" target="_blank" class="project-link">[GitHub]</a>
+      <div class="item-header">
+        <div class="item-title">
+          AI-Powered Timetable Scheduling System
+          <a href="https://github.com/kavinayagam/timetable" target="_blank" class="project-link">[GitHub]</a>
+        </div>
+        <div class="item-stack">Next.js · Spring Boot · PostgreSQL · Timefold AI</div>
       </div>
       <div class="item-content">
         <ul>
-          <li>Spearheaded the development of a job portal enabling recruiters to post jobs and candidates to apply online, accelerating the hiring process by 30%.</li>
-          <li>Integrated dynamic job filtering, JWT-based authentication, and a real-time application tracking system.</li>
+          <li>Engineered a full-stack scheduling system using Spring Boot and Next.js, integrating Timefold AI solver to automate conflict-free timetable generation by evaluating thousands of permutations.</li>
+          <li>Programmed 15+ complex mathematical constraints for optimal resource allocation and implemented Server-Sent Events (SSE) for real-time solver progress updates.</li>
+          <li>Secured APIs with JWT authentication and improved frontend rendering with TanStack Query, enabling dynamic timetable interaction and PDF/ZIP exports.</li>
         </ul>
       </div>
     </div>
@@ -297,12 +331,12 @@
   <section>
     <h3 class="section-title">Skills</h3>
     <div class="skills-grid">
-      <span>C++, Java, JS/TS, SQL</span>
-      <span>React, Next.js, Redux</span>
-      <span>Node.js, Spring Boot</span>
-      <span>AWS, Docker, Git</span>
+      <span>C++, Java, JavaScript, TypeScript, SQL</span>
+      <span>React, Next.js</span>
+      <span>Spring Boot, Spring Security</span>
+      <span>AWS S3, Docker, JWT, Git</span>
       <span>MySQL, PostgreSQL</span>
-      <span>DSA, OOP, OS, Networks</span>
+      <span>DSA, OOP, Operating Systems, Networking</span>
     </div>
   </section>
 
@@ -312,8 +346,8 @@
   <section style="margin-bottom: 0;">
     <h3 class="section-title">Achievements</h3>
     <div class="item-group" style="margin-bottom: 4px;">
-      <div class="item-title">550+ LeetCode</div>
-      <div class="item-content">Solved 550+ DSA problems demonstrating strong algorithmic thinking.</div>
+      <div class="item-title">500+ LeetCode</div>
+      <div class="item-content">Solved 500+ DSA problems demonstrating strong algorithmic thinking.</div>
     </div>
     <div class="item-group" style="margin-bottom: 4px;">
       <div class="item-title">Full-Stack Deployments</div>
